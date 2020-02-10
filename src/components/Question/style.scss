@@ -8,7 +8,8 @@
 	}
 
 	&-bird {
-		width: 400px;
+		// width: 400px;
+		max-width: 35%;
 	}
 
 	&-title {
@@ -17,4 +18,20 @@
 		font-size: 22px;
 
 	}
+
+	&__audio {
+		border: 1px solid #000;
+		background-color: #3d3c3c;
+		border-radius: 5px;
+		overflow: hidden;
+		width: 27rem;
+		padding: .4rem;
+		margin: 30px auto;
+	}
+}
+
+audio::-webkit-media-controls-play-button {
+	background-color: #8db67e;
+	height: 30px;
+	border-radius: 5px;
 }
