@@ -1,0 +1,20 @@
+.question {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 70px;
+
+	&-right {
+		width: 60%;
+	}
+
+	&-bird {
+		width: 400px;
+	}
+
+	&-title {
+		font-weight: 500;
+		text-align: left;
+		font-size: 22px;
+
+	}
+}
