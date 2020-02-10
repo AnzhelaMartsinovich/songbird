@@ -1,15 +1,37 @@
 import React from 'react';
 import './style.scss';
 
-function Options() {
+function ClickBird(props) {
+	const clickedBird = props.target.textContent;
+	return clickedBird;
+}
+
+function Options({ birds, onBirdClick }) {
+	// const birdsList = birds.map((birdsArr) =>
+	// 	birdsArr.map((bird) =>
+	// 		<li key={bird.id} className="options-item">
+	// 			{bird.name}
+	// 		</li>
+	// 	)
+	// )
+
+	// return (
+	// 	<ul className="options-list" onClick={ClickBird}>
+	// 		{birdsList}
+	// 	</ul>
+	// )
+
+	birds = birds[0];
+
+	const birdsList = birds.map((bird) =>
+		<li key={bird.id} onClick={() => onBirdClick(bird)} className="options-item">
+			{bird.name}
+		</li>
+	)
+
 	return (
-		<ul className="options-list">
-			<li className="options-item">Воробей</li>
-			<li className="options-item">Грач</li>
-			<li className="options-item">Галка</li>
-			<li className="options-item">Певчий дрозд</li>
-			<li className="options-item">Сорока</li>
-			<li className="options-item">Сойка</li>
+		<ul className="options-list" onClick={ClickBird}>
+			{birdsList}
 		</ul>
 	)
 }

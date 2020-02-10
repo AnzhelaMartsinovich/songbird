@@ -12,22 +12,22 @@ function Header() {
 			</div>
 			<ul className="header-list">
 				<li className="header-item">
-					<a href="#">Разминка</a>
+					<a href="/#">Разминка</a>
 				</li>
 				<li className="header-item">
-					<a href="#">Воробьиные</a>
+					<a href="/#">Воробьиные</a>
 				</li>
 				<li className="header-item">
-					<a href="#">Лесные птицы</a>
+					<a href="/#">Лесные птицы</a>
 				</li>
 				<li className="header-item">
-					<a href="#">Певчие птицы</a>
+					<a href="/#">Певчие птицы</a>
 				</li>
 				<li className="header-item">
-					<a href="#">Хищные птицы</a>
+					<a href="/#">Хищные птицы</a>
 				</li>
 				<li className="header-item">
-					<a href="#">Морские птицы</a>
+					<a href="/#">Морские птицы</a>
 				</li>
 			</ul>
 		</header>

@@ -7,6 +7,7 @@ import NextBtn from './components/Next/NextBtn'
 import './media.css';
 
 function App() {
+
   return (
     <div className="container">
       <Header />
@@ -18,3 +19,10 @@ function App() {
 }
 
 export default App;
+
+
+// App(selectedBird)
+//   - Wrapper -> функция которая меняет выбранную птицу
+//     - Options
+
+//     - Question -> selectedBird
