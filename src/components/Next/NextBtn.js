@@ -3,7 +3,7 @@ import './style.scss';
 
 function NextBtn() {
 	return (
-		<button className="next-btn">Next Level</button>
+		<button className="next-btn">Следующий уровень</button>
 	)
 }
 

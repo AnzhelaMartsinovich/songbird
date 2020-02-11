@@ -1,23 +1,32 @@
 .options {
-	&-list {
-		background-color: #3d3c3c;
-		margin: 0;
-		margin-right: 30px;
-		list-style: none;
-		padding: 20px 0;
-		width: 35%;
-		border-radius: 5px;
-	}
+  &-list {
+    background-color: #3d3c3c;
+    margin: 0;
+    margin-right: 30px;
+    list-style: none;
+    padding: 20px 0;
+    width: 35%;
+    border-radius: 5px;
+  }
 
-	&-item {
-		font-size: 18px;
-		padding: 10px 0 10px 20px;
-		color: #8db67e;
+  &-item {
+    font-size: 18px;
+    padding: 10px 0 10px 20px;
+    color: #8db67e;
 
-		&:hover {
-			color: #000;
-			cursor: pointer;
-			background-color: #c2d4bb;
-		}
-	}
+    &:hover {
+      color: #000;
+      cursor: pointer;
+      background-color: #c2d4bb;
+    }
+  }
+}
+
+.error {
+  text-decoration: line-through;
+}
+
+.win {
+  color: #e3e9e1;
+  font-weight: 700;
 }

@@ -1,14 +1,15 @@
 .next-btn {
-	width: 100%;
-	margin-bottom: 20px;
-	font-size: 18px;
-	line-height: 35px;
-	border-radius: 5px;
-	background-color: transparent;
-	border: 1px solid #8db67e;
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 35px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px solid #8db67e;
 
-	&:hover {
-		background-color: #b7cab0;
-		cursor: pointer;
-	}
+  &:hover {
+    background-color: #b7cab0;
+    cursor: pointer;
+  }
 }

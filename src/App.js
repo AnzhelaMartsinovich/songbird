@@ -12,8 +12,9 @@ function App() {
     <div className="container">
       <Header />
       <Question />
-      <Wrapper />
       <NextBtn />
+      <Wrapper />
+
     </div>
   );
 }
