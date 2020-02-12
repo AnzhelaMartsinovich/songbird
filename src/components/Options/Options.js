@@ -1,33 +1,43 @@
-import React from 'react';
-import './style.scss';
-import answer from './../../helpers/answers';
+import React from "react";
+import "./style.scss";
+import answer from "./../../helpers/answers";
 
 function ClickBird(props) {
 	const clickedBird = props.target.textContent;
 
-	if (clickedBird !== answer[0].name) {
-		props.target.className += ' error';
-	} else {
-		props.target.className += ' win';
+	if (clickedBird !== answer[0].name && props.target.tagName === "LI") {
+		props.target.className += " error";
+	}
+	if (clickedBird === answer[0].name && props.target.tagName === "LI") {
+		props.target.className += " win";
 	}
 
 	return clickedBird;
 }
 
-function Options({ birds, onBirdClick }) {
+function Options({ birds, onBirdClick, onBirdClickApp }) {
 	birds = birds[0];
 
-	const birdsList = birds.map((bird) =>
-		<li key={bird.id} onClick={() => onBirdClick(bird)} className="options-item">
+	const handleClick = bird => {
+		onBirdClick(bird);
+		onBirdClickApp(bird);
+	};
+
+	const birdsList = birds.map(bird => (
+		<li
+			key={bird.id}
+			onClick={() => handleClick(bird)}
+			className="options-item"
+		>
 			{bird.name}
 		</li>
-	)
+	));
 
 	return (
 		<ul className="options-list" onClick={ClickBird}>
 			{birdsList}
 		</ul>
-	)
+	);
 }
 
-export default Options
+export default Options;

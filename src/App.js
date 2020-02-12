@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Header from './components/Header/Header'
 import Question from './components/Question/Question'
@@ -8,22 +8,18 @@ import './media.css';
 
 function App() {
 
+  const [selectedBirdFromApp, setSelectedBirdFromApp] = useState(0);
+  const changeSelectedBirdFromApp = (bird) => setSelectedBirdFromApp(bird);
+
   return (
     <div className="container">
       <Header />
-      <Question />
+      <Question selectedBirdFromApp={selectedBirdFromApp} />
       <NextBtn />
-      <Wrapper />
+      <Wrapper onBirdClickApp={changeSelectedBirdFromApp} />
 
     </div>
   );
 }
 
 export default App;
-
-
-// App(selectedBird)
-//   - Wrapper -> функция которая меняет выбранную птицу
-//     - Options
-
-//     - Question -> selectedBird
