@@ -1,5 +1,5 @@
 import birds from './birds';
 
-const answers = [birds[0][2], birds[1][4], birds[2][5], birds[3][2], birds[4][6], birds[5][1]];
+const answers = [birds[0][3], birds[1][2], birds[2][4], birds[3][5], birds[4][2]];
 
 export default answers;

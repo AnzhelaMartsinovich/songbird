@@ -1,8 +1,8 @@
 import React from 'react';
 import './style.scss';
 
-function Descr({ birds, selectedBird }) {
-	birds = birds[0];
+function Descr({ birds, selectedBird, currentQuestionIndex }) {
+	birds = birds[currentQuestionIndex];
 
 	let allInformation = birds.find(bird => bird.name === selectedBird);
 

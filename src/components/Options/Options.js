@@ -2,21 +2,22 @@ import React from "react";
 import "./style.scss";
 import answer from "./../../helpers/answers";
 
-function ClickBird(props) {
-	const clickedBird = props.target.textContent;
 
-	if (clickedBird !== answer[0].name && props.target.tagName === "LI") {
-		props.target.className += " error";
+function Options({ birds, onBirdClick, onBirdClickApp, currentQuestionIndex }) {
+	function ClickBird(props) {
+		const clickedBird = props.target.textContent;
+
+		if (clickedBird !== answer[currentQuestionIndex].name && props.target.tagName === "LI") {
+			props.target.className += " error";
+		}
+		if (clickedBird === answer[currentQuestionIndex].name && props.target.tagName === "LI") {
+			props.target.className += " win";
+		}
+
+		return clickedBird;
 	}
-	if (clickedBird === answer[0].name && props.target.tagName === "LI") {
-		props.target.className += " win";
-	}
 
-	return clickedBird;
-}
-
-function Options({ birds, onBirdClick, onBirdClickApp }) {
-	birds = birds[0];
+	birds = birds[currentQuestionIndex];
 
 	const handleClick = bird => {
 		onBirdClick(bird);
