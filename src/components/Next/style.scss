@@ -5,11 +5,18 @@
   font-weight: 500;
   line-height: 35px;
   border-radius: 5px;
-  background-color: transparent;
+  background-color: #8db67e;
   border: 1px solid #8db67e;
 
   &:hover {
     background-color: #b7cab0;
     cursor: pointer;
+  }
+}
+
+button:disabled {
+  background-color: transparent;
+  &:hover {
+    background-color: transparent;
   }
 }
