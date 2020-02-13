@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Options from "./Options/Options";
-import Descr from "./Descr/Descr";
-import birds from "./../helpers/birds";
+import Options from "../Options/Options";
+import Descr from "../Descr/Descr";
+import birds from "../../helpers/birds";
 
 function Wrapper({ onBirdClickApp, currentQuestion }) {
 	const [selectedBird, setSelectedBird] = useState(null);

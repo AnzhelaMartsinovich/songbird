@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Question from "./components/Question/Question";
-import Wrapper from "./components/Wrapper";
-import NextBtn from "./components/Next/NextBtn";
+import Wrapper from "./components/Wrapper/Wrapper";
+import NextBtn from "./components/NextBtn/NextBtn";
 import "./media.css";
+import Finish from "./components/Finish/Finish";
 
 function App() {
   /**
@@ -15,13 +16,19 @@ function App() {
    */
 
   let [currentQuestion, setCurrentQuestion] = useState(0);
-  if (currentQuestion >= 5) {
-    alert('А вопросы закончились! Но ты можешь попробовать сново!')
-    currentQuestion = 0;
-  }
-
   const [selectedBirdFromApp, setSelectedBirdFromApp] = useState(0);
   const changeSelectedBirdFromApp = bird => setSelectedBirdFromApp(bird);
+
+  function ReRender() {
+    if (currentQuestion >= 5) {
+      return <Finish />
+    }
+    return <Fragment>
+      <Question selectedBirdFromApp={selectedBirdFromApp} currentQuestion={currentQuestion} />
+      <NextBtn setCurrentQuestion={setCurrentQuestion} currentQuestion={currentQuestion} selectedBirdFromApp={selectedBirdFromApp} />
+      <Wrapper onBirdClickApp={changeSelectedBirdFromApp} currentQuestion={currentQuestion} />
+    </Fragment>
+  }
 
   return (
     <div className="container">
@@ -29,6 +36,7 @@ function App() {
       <Question selectedBirdFromApp={selectedBirdFromApp} currentQuestion={currentQuestion} />
       <NextBtn setCurrentQuestion={setCurrentQuestion} currentQuestion={currentQuestion} selectedBirdFromApp={selectedBirdFromApp} />
       <Wrapper onBirdClickApp={changeSelectedBirdFromApp} currentQuestion={currentQuestion} />
+      {/* <ReRender /> */}
     </div>
   );
 }

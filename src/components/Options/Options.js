@@ -1,41 +1,26 @@
 import React from "react";
 import "./style.scss";
-import answer from "./../../helpers/answers";
-
+import StyleForClickBird from './StyleForClickBird';
 
 function Options({ birds, onBirdClick, onBirdClickApp, currentQuestionIndex }) {
-	function ClickBird(props) {
-		const clickedBird = props.target.textContent;
-
-		if (clickedBird !== answer[currentQuestionIndex].name && props.target.tagName === "LI") {
-			props.target.className += " error";
-		}
-		if (clickedBird === answer[currentQuestionIndex].name && props.target.tagName === "LI") {
-			props.target.className += " win";
-		}
-
-		return clickedBird;
-	}
 
 	birds = birds[currentQuestionIndex];
 
-	const handleClick = bird => {
+	const handleClick = (bird) => {
 		onBirdClick(bird);
 		onBirdClickApp(bird);
 	};
 
 	const birdsList = birds.map(bird => (
-		<li
-			key={bird.id}
-			onClick={() => handleClick(bird)}
-			className="options-item"
-		>
+		<li key={bird.id} onClick={() => handleClick(bird)} className="options-item">
 			{bird.name}
 		</li>
 	));
 
 	return (
-		<ul className="options-list" onClick={ClickBird}>
+		<ul className="options-list"
+			onClick={(event) => { StyleForClickBird({ currentQuestionIndex, event }) }}
+		>
 			{birdsList}
 		</ul>
 	);

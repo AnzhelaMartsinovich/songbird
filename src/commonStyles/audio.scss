@@ -43,13 +43,14 @@ path {
   background-color: #3d3c3c;
 }
 
-.descr-audio{
+.descr-audio {
   padding-left: 0;
   padding-right: 30px;
   background-color: transparent;
   border: none;
   height: 50px;
-  & .rhap_progress-indicator{
+  box-shadow: none;
+  & .rhap_progress-indicator {
     background-color: #b7cab0;
   }
 }

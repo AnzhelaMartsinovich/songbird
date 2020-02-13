@@ -6,12 +6,11 @@ import './../../commonStyles/audio.scss';
 
 function Descr({ birds, selectedBird, currentQuestionIndex }) {
 	birds = birds[currentQuestionIndex];
-
 	let allInformation = birds.find(bird => bird.name === selectedBird);
 
 	const Player = () => (
 		<AudioPlayer
-			src={allInformation === undefined ? '' : allInformation.audio} 
+			src={allInformation === undefined ? '' : allInformation.audio}
 			style={{ display: allInformation === undefined ? 'none' : 'flex' }}
 			className="descr-audio"
 		/>
@@ -22,7 +21,7 @@ function Descr({ birds, selectedBird, currentQuestionIndex }) {
 			<div className="flex-wrap">
 				<div className="descr-titles">
 					<h3 className="descr-title">
-						{selectedBird === null ? 'Правила викторины:' : selectedBird}
+						{selectedBird === null || allInformation === undefined ? 'Правила викторины:' : selectedBird}
 					</h3>
 
 					<h5 className="descr-subtitle">
