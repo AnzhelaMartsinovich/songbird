@@ -1,10 +1,21 @@
 import React from 'react';
 import './style.scss';
+import AudioPlayer from "react-h5-audio-player";
+import 'react-h5-audio-player/lib/styles.css';
+import './../../commonStyles/audio.scss';
 
 function Descr({ birds, selectedBird, currentQuestionIndex }) {
 	birds = birds[currentQuestionIndex];
 
 	let allInformation = birds.find(bird => bird.name === selectedBird);
+
+	const Player = () => (
+		<AudioPlayer
+			src={allInformation === undefined ? '' : allInformation.audio} 
+			style={{ display: allInformation === undefined ? 'none' : 'flex' }}
+			className="descr-audio"
+		/>
+	);
 
 	return (
 		<div className="descr">
@@ -18,7 +29,7 @@ function Descr({ birds, selectedBird, currentQuestionIndex }) {
 						{allInformation === undefined ? '' : allInformation.species}
 					</h5>
 
-					<audio controls="controls" src={allInformation === undefined ? '' : allInformation.audio} className="descr__audio" style={{ display: allInformation === undefined ? 'none' : 'block' }} />
+					<Player />
 				</div>
 
 				<img className="descr__bird-img" src={allInformation === undefined ? '' : allInformation.image} alt="bird" style={{ display: allInformation === undefined ? 'none' : 'block' }} />

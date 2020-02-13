@@ -17,9 +17,7 @@
   &-title {
     font-weight: 500;
     text-align: left;
-    // font-size: 22px;
     font-size: 30px;
-    margin-bottom: 0;
   }
 
   &__audio {
@@ -37,4 +35,9 @@ audio::-webkit-media-controls-play-button {
   background-color: #8db67e;
   height: 30px;
   border-radius: 5px;
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+  display: none;
 }

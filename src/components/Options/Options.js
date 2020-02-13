@@ -23,8 +23,6 @@ function Options({ birds, onBirdClick, onBirdClickApp, currentQuestionIndex }) {
 		onBirdClick(bird);
 		onBirdClickApp(bird);
 	};
-	// let bla = currentQuestionIndex - 1;
-	// console.log(currentQuestionIndex, bla);
 
 	const birdsList = birds.map(bird => (
 		<li
