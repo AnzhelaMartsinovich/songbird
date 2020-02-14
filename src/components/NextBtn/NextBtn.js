@@ -1,21 +1,22 @@
 import React from 'react';
 import './style.scss';
-import answers from '../../helpers/answers';
 import resetClassPoints from './resetClassPoints';
 
-function NextBtn({ setCurrentQuestion, currentQuestion, selectedBirdFromApp }) {
+function NextBtn({ setCurrentQuestion, currentQuestion, setGoal, goal }) {
 	let counter = () => { setCurrentQuestion(currentQuestion + 1) };
+	let train = () => { setGoal(false) }
 
 	const handleClick = () => {
 		counter();
 		resetClassPoints();
+		train();
 	};
 
 	return (
 		<button
 			onClick={handleClick}
 			className="next-btn"
-			disabled={selectedBirdFromApp.name !== answers[currentQuestion].name ? true : false}
+			disabled={goal === true ? false : true}
 		>
 			Следующий уровень
 		</button>
