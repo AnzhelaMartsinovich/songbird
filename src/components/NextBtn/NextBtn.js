@@ -1,14 +1,7 @@
 import React from 'react';
 import './style.scss';
 import answers from '../../helpers/answers';
-
-function resetClassPoints() {
-	let li = document.querySelectorAll('li.options-item');
-	li.forEach(element => {
-		element.className = 'options-item';
-	});
-}
-
+import resetClassPoints from './resetClassPoints';
 
 function NextBtn({ setCurrentQuestion, currentQuestion, selectedBirdFromApp }) {
 	let counter = () => { setCurrentQuestion(currentQuestion + 1) };

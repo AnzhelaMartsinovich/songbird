@@ -1,10 +1,11 @@
 import React from 'react';
 import logo from './../../img/logo.png';
 import './style.scss';
-import Point from './Point'
+import Point from './Point';
 
 function Header({ currentIndex }) {
 	let itemMenu = currentIndex + 1;
+
 	return (
 		<header className="header">
 			<h1>Song bird</h1>

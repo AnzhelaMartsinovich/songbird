@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.scss";
-import StyleForClickBird from './StyleForClickBird';
+import styleForClickBird from './styleForClickBird';
 
 function Options({ birds, onBirdClick, onBirdClickApp, currentQuestionIndex }) {
 
@@ -19,7 +19,7 @@ function Options({ birds, onBirdClick, onBirdClickApp, currentQuestionIndex }) {
 
 	return (
 		<ul className="options-list"
-			onClick={(event) => { StyleForClickBird({ currentQuestionIndex, event }) }}
+			onClick={(event) => { styleForClickBird({ currentQuestionIndex, event }) }}
 		>
 			{birdsList}
 		</ul>
