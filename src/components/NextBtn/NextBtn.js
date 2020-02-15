@@ -2,14 +2,16 @@ import React from 'react';
 import './style.scss';
 import resetClassPoints from './resetClassPoints';
 
-function NextBtn({ setCurrentQuestion, currentQuestion, setGoal, goal }) {
+function NextBtn({ setCurrentQuestion, currentQuestion, setGoal, goal, setCount }) {
 	let counter = () => { setCurrentQuestion(currentQuestion + 1) };
-	let train = () => { setGoal(false) }
+	let resetGoal = () => { setGoal(false) }
+	let resetCount = () => { setCount(0) }
 
 	const handleClick = () => {
 		counter();
 		resetClassPoints();
-		train();
+		resetGoal();
+		resetCount()
 	};
 
 	return (

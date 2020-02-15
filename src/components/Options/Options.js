@@ -2,23 +2,22 @@ import React from "react";
 import "./style.scss";
 import setStyleForClickBird from './setStyleForClickBird';
 
-function Options({ birds, onBirdClick, currentQuestionIndex, checkTrueAnswer, goal }) {
+function Options({ birds, onBirdClick, currentQuestionIndex, checkTrueAnswer, goal, numberOfClicks }) {
 	birds = birds[currentQuestionIndex];
 
-	const handleClick = (bird) => {
+	const handleClickLi = (bird) => {
 		onBirdClick(bird);
 	};
 
-
-	const handleClick2 = (event) => {
+	const handleClickUl = (event) => {
 		checkTrueAnswer({ event, goal });
 		setStyleForClickBird({ currentQuestionIndex, event, goal })
+		numberOfClicks({ event })
 	}
-
 
 	const birdsList = birds.map(bird => (
 		<li key={bird.id}
-			onClick={() => handleClick(bird)}
+			onClick={() => handleClickLi(bird)}
 			className="options-item">
 			{bird.name}
 		</li>
@@ -26,7 +25,7 @@ function Options({ birds, onBirdClick, currentQuestionIndex, checkTrueAnswer, go
 
 	return (
 		<ul className="options-list"
-			onClick={(event) => handleClick2(event)}
+			onClick={(event) => handleClickUl(event)}
 		>
 			{birdsList}
 		</ul>

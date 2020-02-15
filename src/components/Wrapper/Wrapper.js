@@ -3,25 +3,10 @@ import Options from "../Options/Options";
 import Descr from "../Descr/Descr";
 import birds from "../../helpers/birds";
 
-function Wrapper({ onBirdClickApp, currentQuestion, checkTrueAnswer, goal }) {
+function Wrapper({ currentQuestion, checkTrueAnswer, goal, numberOfClicks }) {
 	const [selectedBird, setSelectedBird] = useState(null);
 	const changeSelectedBird = bird => setSelectedBird(bird.name);
-	//
-	// let [goal, setGoal] = useState(false);
 
-	// function getCountAnswersClick(props) {
-	// 	const target = props.event.target;
-	// 	const clickedBird = target.textContent;
-
-	// 	if (clickedBird === answer[currentQuestion].name) {
-	// 		setGoal(true);
-	// 	}
-	// 	console.log(props.goal);
-	// 	goal = props.goal;
-	// 	return goal;
-	// }
-	// console.log(goal, answer[currentQuestion].name);
-	//
 	return (
 		<div className="wrapper">
 			<Options
@@ -30,6 +15,7 @@ function Wrapper({ onBirdClickApp, currentQuestion, checkTrueAnswer, goal }) {
 				currentQuestionIndex={currentQuestion}
 				checkTrueAnswer={checkTrueAnswer}
 				goal={goal}
+				numberOfClicks={numberOfClicks}
 			/>
 			<Descr
 				birds={birds}
