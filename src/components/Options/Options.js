@@ -1,17 +1,35 @@
-import React from 'react';
-import './style.scss';
+import React from "react";
+import "./style.scss";
+import setStyleForClickBird from './setStyleForClickBird';
 
-function Options() {
+function Options({ birds, onBirdClick, currentQuestionIndex, checkTrueAnswer, clickedPoint, numberOfClicks }) {
+	birds = birds[currentQuestionIndex];
+
+	const handleClickLi = (bird) => {
+		onBirdClick(bird);
+	};
+
+	const handleClickUl = (event) => {
+		checkTrueAnswer({ event, clickedPoint });
+		setStyleForClickBird({ currentQuestionIndex, event, clickedPoint })
+		numberOfClicks({ event })
+	}
+
+	const birdsList = birds.map(bird => (
+		<li key={bird.id}
+			onClick={() => handleClickLi(bird)}
+			className="options-item">
+			{bird.name}
+		</li>
+	));
+
 	return (
-		<ul className="options-list">
-			<li className="options-item">Воробей</li>
-			<li className="options-item">Грач</li>
-			<li className="options-item">Галка</li>
-			<li className="options-item">Певчий дрозд</li>
-			<li className="options-item">Сорока</li>
-			<li className="options-item">Сойка</li>
+		<ul className="options-list"
+			onClick={(event) => handleClickUl(event)}
+		>
+			{birdsList}
 		</ul>
-	)
+	);
 }
 
-export default Options
+export default Options;

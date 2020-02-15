@@ -1,18 +1,45 @@
 .descr {
-	background-color: #3d3c3c;
-	width: 63%;
-	border-radius: 5px;
-	padding: 20px 35px;
+  background-color: #3d3c3c;
+  width: 63%;
+  border-radius: 5px;
+  padding: 20px 35px;
 
-	&-title {
-		font-size: 25px;
-		color: #b7cab0;
-	}
+  &-title {
+    margin-top: 10px;
+    font-size: 25px;
+    color: #b7cab0;
+  }
 
-	&-text {
-		max-width: 70%;
-		font-size: 19px;
-		line-height: 35px;
-		color: #8db67e;
-	}
+  &-titles {
+    width: 55%;
+  }
+
+  &-subtitle {
+    font-size: 17px;
+    margin: 0;
+    margin-bottom: 25px;
+    color: rgb(241, 236, 236);
+  }
+
+  &-text {
+    // max-width: 70%;
+    font-size: 18px;
+    line-height: 35px;
+    color: #8db67e;
+  }
+
+  &__bird-img {
+    max-height: 170px;
+    max-width: 250px;
+  }
+
+  &__audio {
+    width: 100%;
+    height: 45px;
+  }
+}
+
+.flex-wrap {
+  display: flex;
+  justify-content: space-between;
 }

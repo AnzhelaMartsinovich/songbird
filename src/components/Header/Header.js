@@ -1,34 +1,23 @@
 import React from 'react';
 import logo from './../../img/logo.png';
-import './style.scss'
+import './style.scss';
+import Point from './Point';
 
-function Header() {
+function Header({ currentIndex, score }) {
+	let itemMenu = currentIndex + 1;
 	return (
 		<header className="header">
 			<h1>Song bird</h1>
 			<div className="header-wrap">
 				<img src={logo} className="logo" alt="logo" />
-				<div>Score: </div>
+				<p className="header-score">Score: {score}</p>
 			</div>
 			<ul className="header-list">
-				<li className="header-item">
-					<a href="#">Разминка</a>
-				</li>
-				<li className="header-item">
-					<a href="#">Воробьиные</a>
-				</li>
-				<li className="header-item">
-					<a href="#">Лесные птицы</a>
-				</li>
-				<li className="header-item">
-					<a href="#">Певчие птицы</a>
-				</li>
-				<li className="header-item">
-					<a href="#">Хищные птицы</a>
-				</li>
-				<li className="header-item">
-					<a href="#">Морские птицы</a>
-				</li>
+				<Point item="1" itemMenu={itemMenu} />
+				<Point item="2" itemMenu={itemMenu} />
+				<Point item="3" itemMenu={itemMenu} />
+				<Point item="4" itemMenu={itemMenu} />
+				<Point item="5" itemMenu={itemMenu} />
 			</ul>
 		</header>
 	)
