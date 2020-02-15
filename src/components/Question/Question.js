@@ -7,7 +7,7 @@ import 'react-h5-audio-player/lib/styles.css';
 import './../../commonStyles/audio.scss';
 
 
-function Question({ currentQuestion, goal }) {
+function Question({ currentQuestion, clickedPoint }) {
 	const Player = () => (
 		<AudioPlayer
 			src={answer[currentQuestion].audio}
@@ -16,13 +16,13 @@ function Question({ currentQuestion, goal }) {
 
 	return (
 		<div className="question">
-			<img src={goal ? answer[currentQuestion].image : bird}
+			<img src={clickedPoint ? answer[currentQuestion].image : bird}
 				alt="bird"
 				className="question-bird"
 			/>
 			<div className="question-right">
 				<h3 className="question-title">
-					{goal ? answer[currentQuestion].name : "******"}
+					{clickedPoint ? answer[currentQuestion].name : "******"}
 				</h3>
 				<Player />
 			</div>
@@ -31,5 +31,3 @@ function Question({ currentQuestion, goal }) {
 }
 
 export default Question;
-
-/* selectedBirdFromApp.name === answer[currentQuestion].name ? selectedBirdFromApp.image : bird */

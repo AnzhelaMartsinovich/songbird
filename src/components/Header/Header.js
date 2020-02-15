@@ -3,15 +3,14 @@ import logo from './../../img/logo.png';
 import './style.scss';
 import Point from './Point';
 
-function Header({ currentIndex, value }) {
+function Header({ currentIndex, score }) {
 	let itemMenu = currentIndex + 1;
-	console.log(value);
 	return (
 		<header className="header">
 			<h1>Song bird</h1>
 			<div className="header-wrap">
 				<img src={logo} className="logo" alt="logo" />
-				<div>Score: {value}</div>
+				<p className="header-score">Score: {score}</p>
 			</div>
 			<ul className="header-list">
 				<Point item="1" itemMenu={itemMenu} />

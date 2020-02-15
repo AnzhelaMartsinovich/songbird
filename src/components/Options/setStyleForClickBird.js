@@ -5,7 +5,7 @@ function setStyleForClickBird(props) {
 	const target = props.event.target
 	const clickedBird = target.textContent;
 
-	if (props.goal === false) {
+	if (props.clickedPoint === false) {
 		if (clickedBird !== answer[props.currentQuestionIndex].name && target.tagName === "LI") {
 			target.className += " error";
 

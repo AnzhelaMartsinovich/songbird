@@ -3,7 +3,7 @@ import Options from "../Options/Options";
 import Descr from "../Descr/Descr";
 import birds from "../../helpers/birds";
 
-function Wrapper({ currentQuestion, checkTrueAnswer, goal, numberOfClicks }) {
+function Wrapper({ currentQuestion, checkTrueAnswer, clickedPoint, numberOfClicks }) {
 	const [selectedBird, setSelectedBird] = useState(null);
 	const changeSelectedBird = bird => setSelectedBird(bird.name);
 
@@ -14,7 +14,7 @@ function Wrapper({ currentQuestion, checkTrueAnswer, goal, numberOfClicks }) {
 				onBirdClick={changeSelectedBird}
 				currentQuestionIndex={currentQuestion}
 				checkTrueAnswer={checkTrueAnswer}
-				goal={goal}
+				clickedPoint={clickedPoint}
 				numberOfClicks={numberOfClicks}
 			/>
 			<Descr

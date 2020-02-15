@@ -10,24 +10,24 @@ import answer from './helpers/answers'
 
 function App() {
   let [currentQuestion, setCurrentQuestion] = useState(0);
-  let [goal, setGoal] = useState(false);
+  let [clickedPoint, setClickedPoint] = useState(false);
 
   function checkTrueAnswer(props) {
     const target = props.event.target;
     const clickedBird = target.textContent;
 
     if (clickedBird === answer[currentQuestion].name) {
-      setGoal(true);
+      setClickedPoint(true);
     }
-    goal = props.goal;
-    return goal;
+    clickedPoint = props.clickedPoint;
+    return clickedPoint;
   }
 
   const [countAnswersClick, setCount] = useState(0);
-  let [value, setValue] = useState(0);
+  let [score, setScore] = useState(0);
 
   function numberOfClicks(props) {
-    if (goal === false) {
+    if (clickedPoint === false) {
       setCount(countAnswersClick + 1)
     }
     const target = props.event.target;
@@ -35,17 +35,17 @@ function App() {
 
     if (clickedBird === answer[currentQuestion].name) {
       if (countAnswersClick === 0) {
-        return setValue(value = value + 5)
+        return setScore(score += 5)
       } else if (countAnswersClick === 1) {
-        return setValue(value = value + 4)
+        return setScore(score += 4)
       } else if (countAnswersClick === 2) {
-        return setValue(value = value + 3)
+        return setScore(score += 3)
       } else if (countAnswersClick === 3) {
-        return setValue(value = value + 2)
+        return setScore(score += 2)
       } else if (countAnswersClick === 4) {
-        return setValue(value = value + 1)
+        return setScore(score += 1)
       } else {
-        return setValue(value = value + 0)
+        return setScore(score += 0)
       }
     }
   }
@@ -53,18 +53,18 @@ function App() {
   if (currentQuestion !== 5) {
     return (
       <div className="container">
-        <Header currentIndex={currentQuestion} value={value} />
-        <Question currentQuestion={currentQuestion} goal={goal} />
-        <NextBtn setCurrentQuestion={setCurrentQuestion} currentQuestion={currentQuestion} setGoal={setGoal} goal={goal} setCount={setCount} />
-        <Wrapper currentQuestion={currentQuestion} checkTrueAnswer={checkTrueAnswer} goal={goal} numberOfClicks={numberOfClicks} />
+        <Header currentIndex={currentQuestion} score={score} />
+        <Question currentQuestion={currentQuestion} clickedPoint={clickedPoint} />
+        <NextBtn setCurrentQuestion={setCurrentQuestion} currentQuestion={currentQuestion} setClickedPoint={setClickedPoint} clickedPoint={clickedPoint} setCount={setCount} />
+        <Wrapper currentQuestion={currentQuestion} checkTrueAnswer={checkTrueAnswer} clickedPoint={clickedPoint} numberOfClicks={numberOfClicks} />
       </div>
     );
   }
 
   return (
     <div className="container">
-      <Header currentIndex={currentQuestion} value={value} />
-      <Finish setCurrentQuestion={setCurrentQuestion} currentIndex={currentQuestion} value={value} setValue={setValue} />
+      <Header currentIndex={currentQuestion} score={score} />
+      <Finish setCurrentQuestion={setCurrentQuestion} currentIndex={currentQuestion} score={score} setScore={setScore} />
     </div>
   )
 }

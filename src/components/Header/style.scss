@@ -3,7 +3,7 @@ h1 {
 }
 
 .logo {
-  height: 80px;
+  height: 65px;
 }
 
 .header {
@@ -33,5 +33,9 @@ h1 {
       text-decoration: none;
       color: #8db67e;
     }
+  }
+
+  &-score {
+    font-weight: 700;
   }
 }

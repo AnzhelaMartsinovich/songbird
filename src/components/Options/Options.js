@@ -2,7 +2,7 @@ import React from "react";
 import "./style.scss";
 import setStyleForClickBird from './setStyleForClickBird';
 
-function Options({ birds, onBirdClick, currentQuestionIndex, checkTrueAnswer, goal, numberOfClicks }) {
+function Options({ birds, onBirdClick, currentQuestionIndex, checkTrueAnswer, clickedPoint, numberOfClicks }) {
 	birds = birds[currentQuestionIndex];
 
 	const handleClickLi = (bird) => {
@@ -10,8 +10,8 @@ function Options({ birds, onBirdClick, currentQuestionIndex, checkTrueAnswer, go
 	};
 
 	const handleClickUl = (event) => {
-		checkTrueAnswer({ event, goal });
-		setStyleForClickBird({ currentQuestionIndex, event, goal })
+		checkTrueAnswer({ event, clickedPoint });
+		setStyleForClickBird({ currentQuestionIndex, event, clickedPoint })
 		numberOfClicks({ event })
 	}
 
@@ -33,13 +33,3 @@ function Options({ birds, onBirdClick, currentQuestionIndex, checkTrueAnswer, go
 }
 
 export default Options;
-
-// const [countAnswersClick, setCount] = useState(1);
-
-		// console.log(clickedBird === answer[props.currentQuestionIndex].name);
-
-		// if (countAnswersClick === 2) {
-		// 	setCount(countAnswersClick + 1)
-		// } else {
-		// 	setCount(countAnswersClick + 1)
-		// }
